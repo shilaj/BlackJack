@@ -1,0 +1,23 @@
+.container{
+    width: 75%;
+    margin: 0 auto;
+    text-align: center;
+}
+.flex-box-container-row1,.flex-box-container-row2,.flex-box-container-row3{
+    padding:10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.flex-box-container-row1 div{
+    border: 1px solid black;
+    padding:10px;
+    height: 350px;
+    color:white;
+    background-color: rgb(26, 59, 26);
+    flex: 1 ;
+}
+table,th,td{
+    padding:5px;
+    border: 1px solid black;
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel='stylesheet' href='static/css/style.css'>
+
+    <title>BlackJack</title>
+</head>
+<body>
+    <div class='container'>
+        <h1>BlackJack</h1>
+        <h2><span id='message-flex-box'>Let's Play Buddy !</span></h2>
+        <div class='flex-box-container-row1'>
+            <div id='your-box'>
+                <h3>You:<span id='your-score'>0</span></h3>
+            </div>
+            <div id='dealer-box'>
+                <h3>Your Opponent:<span id='opponent-score'>0</span></h3>
+            </div>
+        </div>
+        <div class='flex-box-container-row2'>
+            <div>
+            <button class='btn-lg btn-danger mr-2' id='hit'>Hit</button>
+            <button class='btn-lg btn-success mr-2' id='stand'>Stand</button>
+            <button class='btn-lg btn-primary ' id='reset'>Reset</button>
+            </div>
+        </div>
+        <div class='flex-box-container-row3'>
+            <table>
+                <tr>
+                    <th>Wins:</th>
+                    <th>Losses:</th>
+                    <th>Draws:</th>
+                </tr>
+                <tr>
+                    <td><span id='total-wins'>0</span></td>
+                    <td><span id='total-losses'>0</span></td>
+                    <td><span id='total-draws'>0</span></td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+<script src=static/js/script.js></script>
+</body>
+</html>
