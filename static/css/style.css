@@ -7,6 +7,7 @@
     padding:10px;
     display: flex;
     flex-direction: row;
+    flex-wrap:wrap;
     justify-content: space-around;
 }
 .flex-box-container-row1 div{
@@ -16,6 +17,12 @@
     color:white;
     background-color: rgb(26, 59, 26);
     flex: 1 ;
+}
+.flex-box-container-row1 img {
+    width: 25%;
+    padding:10px;
+    height:150px;
+    width:100px;
 }
 table,th,td{
     padding:5px;
