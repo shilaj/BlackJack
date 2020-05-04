@@ -1,7 +1,16 @@
+body {
+    display: flex;
+}
 .container{
-    width: 75%;
+    width: 70%;
     margin: 0 auto;
     text-align: center;
+}
+.rule-box{
+    width: 10%;
+    text-align:left ;
+    margin: 80px 5px;
+
 }
 .flex-box-container-row1,.flex-box-container-row2,.flex-box-container-row3{
     padding:10px;
