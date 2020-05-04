@@ -23,9 +23,10 @@ document.querySelector('#resetButton').addEventListener('click',resetBox);
 function blackJackHit(){
     document.querySelector('#message-flex-box').textContent = "Game in progress !"
     var cardValue = randomCardGenerator();
-   showCard(cardValue,YOU); 
-   updateScore(cardValue,YOU);
-   showScore(YOU);
+    showCard(cardValue,YOU); 
+    updateScore(cardValue,YOU);
+    showScore(YOU);
+    
    
 }
 
@@ -94,13 +95,18 @@ function showScore(activePlayer){
     }
 }
 
-function dealerBoxAutoGenerate(){
+function sleep(ms){
+    return new Promise(resolve => setTimeout(resolve,ms));
+}
+
+async function dealerBoxAutoGenerate(){
     if (YOU['score'] > 0){
-    while (DEALER['score'] < 15 ){
+    while (DEALER['score'] < 16 ){
         var cardValue = randomCardGenerator();
         showCard(cardValue,DEALER);
         updateScore(cardValue,DEALER);
         showScore(DEALER);
+        await sleep(500);
     }
     determineWinner();
 }

@@ -30,8 +30,8 @@ body {
 .flex-box-container-row1 img {
     width: 25%;
     padding:10px;
-    height:150px;
-    width:100px;
+    height:50%;
+    /* width:100px; */
 }
 table,th,td{
     padding:5px;
