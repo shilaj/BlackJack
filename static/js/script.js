@@ -2,7 +2,9 @@ var blackJackGame = {
     'you':{'scoreSpan':'#your-score','div':'#your-box','score':0},
     'dealer':{'scoreSpan':'#dealer-score','div':'#dealer-box','score':0},
     'cards':['2','3','4','5','6','7','8','9','10','J','Q','K','A'],
-    'cardsMap':{'2':2,'3':3,'4':4,'5':5,'6':6,'7':7,'8':8,'9':9,'10':10,'J':10,'Q':10,'K':10,'A':[1,11]}
+    'cardsMap':{'2':2,'3':3,'4':4,'5':5,'6':6,'7':7,'8':8,'9':9,'10':10,'J':10,'Q':10,'K':10,'A':[1,11]},
+    'hitButtonBoolean':true,
+    'standButtonBoolean':true
 }
 const YOU = blackJackGame['you'];
 const DEALER = blackJackGame['dealer'];
@@ -21,11 +23,14 @@ document.querySelector('#resetButton').addEventListener('click',resetBox);
 
 
 function blackJackHit(){
-    document.querySelector('#message-flex-box').textContent = "Game in progress !"
-    var cardValue = randomCardGenerator();
-    showCard(cardValue,YOU); 
-    updateScore(cardValue,YOU);
-    showScore(YOU);
+    if ( blackJackGame['hitButtonBoolean'] === true )
+    {
+        document.querySelector('#message-flex-box').textContent = "Game in progress !"
+        var cardValue = randomCardGenerator();
+        showCard(cardValue,YOU); 
+        updateScore(cardValue,YOU);
+        showScore(YOU);
+    }
     
    
 }
@@ -57,6 +62,8 @@ function resetBox(){
     document.querySelector('#total-wins').textContent = wins;
     document.querySelector('#total-losses').textContent = loses;
     document.querySelector('#total-draws').textContent = draws;
+    blackJackGame['hitButtonBoolean'] = true;
+    blackJackGame['standButtonBoolean'] = true;
     
 }
 
@@ -99,20 +106,29 @@ function sleep(ms){
     return new Promise(resolve => setTimeout(resolve,ms));
 }
 
-async function dealerBoxAutoGenerate(){
-    if (YOU['score'] > 0){
-    while (DEALER['score'] < 16 ){
-        var cardValue = randomCardGenerator();
-        showCard(cardValue,DEALER);
-        updateScore(cardValue,DEALER);
-        showScore(DEALER);
-        await sleep(500);
+async function dealerBoxAutoGenerate()
+{
+    if (blackJackGame['standButtonBoolean'] === true)
+    {
+        blackJackGame['hitButtonBoolean'] = false;
+        if (YOU['score'] > 0)
+        {
+            while (DEALER['score'] < 16 )
+            {
+                var cardValue = randomCardGenerator();
+                showCard(cardValue,DEALER);
+                updateScore(cardValue,DEALER);
+                showScore(DEALER);
+                await sleep(500);
+            }
+            determineWinner();
+            blackJackGame['standButtonBoolean'] = false;
+        }
+        else 
+        {
+            document.querySelector('#message-flex-box').textContent = "Oops! you hit stand,hit hit buddy ! "
+        }
     }
-    determineWinner();
-}
-else {
-    document.querySelector('#message-flex-box').textContent = "Oops! you hit stand,hit hit buddy ! "
-}
 }
 
 function determineWinner(){
