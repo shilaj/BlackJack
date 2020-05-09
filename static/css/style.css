@@ -1,5 +1,6 @@
 body {
     display: flex;
+    /* color: burlywood; */
 }
 .container{
     width: 70%;
@@ -7,24 +8,30 @@ body {
     text-align: center;
 }
 .rule-box{
-    width: 10%;
+    display: block;
+    width: 20%;
+    height:50%;
     text-align:left ;
-    margin: 80px 5px;
-
+    background-color: cadetblue;
+    position: relative;
+    top:8rem;
+    left:4rem;
 }
 .flex-box-container-row1,.flex-box-container-row2,.flex-box-container-row3{
     padding:10px;
     display: flex;
     flex-direction: row;
     flex-wrap:wrap;
+
     justify-content: space-around;
 }
 .flex-box-container-row1 div{
     border: 1px solid black;
     padding:10px;
     height: 350px;
-    color:white;
     background-color: rgb(26, 59, 26);
+
+    color:white;
     flex: 1 ;
 }
 .flex-box-container-row1 img {
@@ -36,4 +43,8 @@ body {
 table,th,td{
     padding:5px;
     border: 1px solid black;
+}
+.rule-paragraph{
+    margin:0 4px;
+    width: 100%;
 }
