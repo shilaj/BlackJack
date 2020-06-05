@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,20 +9,17 @@
 
     <title>BlackJack</title>
 </head>
+
 <body>
     <div class='rule-box'>
         <h1>Rules:</h1>
-        <p class="rule-paragraph"> 
-        --> Cards from 2 to 10 are worth the number they resemble. <br>
-        --> Ace is either 1 or 11. <br>
-        --> Jack, Queen and King increase the score by 10. <br>
-        --> Once you are done hitting, stand button lets bot play. <br>
-        --> Whoever gets the score close to 21, wins. <br>
-        --> If you go beyond 21 you will be considered a fool.
+        <p class="rule-paragraph">
+            --> Cards from 2 to 10 are worth the number they resemble. <br> --> Ace is either 1 or 11. <br> --> Jack, Queen and King increase the score by 10. <br> --> Once you are done hitting, stand button lets bot play. <br> --> Whoever gets the score
+            close to 21, wins. <br> --> If you go beyond 21, you will be considered a fool.
         </p>
     </div>
     <div class='container'>
-        <h1>BlackJack</h1>
+        <h1 id="heading">BlackJack<sub id="subscript"><em>(Welcome to the 90s)</em></sub></h1>
         <h2><span id='message-flex-box'>Let's Play Buddy !</span></h2>
         <div class='flex-box-container-row1'>
             <div id='your-box'>
@@ -33,9 +31,9 @@
         </div>
         <div class='flex-box-container-row2'>
             <div>
-            <button class='btn-lg btn-danger mr-2' id='hitButton'>Hit</button>
-            <button class='btn-lg btn-success mr-2' id='standButton'>Stand</button>
-            <button class='btn-lg btn-primary ' id='resetButton'>Reset</button>
+                <button class='btn-lg btn-danger mr-2' id='hitButton'>Hit</button>
+                <button class='btn-lg btn-success mr-2' id='standButton'>Stand</button>
+                <button class='btn-lg btn-primary ' id='resetButton'>Reset</button>
             </div>
         </div>
         <div class='flex-box-container-row3'>
@@ -54,6 +52,7 @@
         </div>
 
     </div>
-<script src=static/js/script.js></script>
+    <script src=static/js/script.js></script>
 </body>
+
 </html>

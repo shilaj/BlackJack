@@ -115,6 +115,7 @@ async function dealerBoxAutoGenerate()
         {
             while (DEALER['score'] < 16 )
             {
+                blackJackGame['standButtonBoolean'] = false;
                 var cardValue = randomCardGenerator();
                 showCard(cardValue,DEALER);
                 updateScore(cardValue,DEALER);
@@ -122,7 +123,6 @@ async function dealerBoxAutoGenerate()
                 await sleep(500);
             }
             determineWinner();
-            blackJackGame['standButtonBoolean'] = false;
         }
         else 
         {
